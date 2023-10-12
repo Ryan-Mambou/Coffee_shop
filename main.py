@@ -99,11 +99,8 @@ def checking_resources(original_resources, coffee_name):
     return ""
 
 
-def toggle_coffee_monitor():
-    return bool(not coffee_monitor)
-
-
 def coffee_machine():
+    global coffee_monitor
     choice = input("What would you like? (espresso/latte/cappuccino)? ")
     if choice == 'report':
         for resource in resources:
@@ -113,7 +110,7 @@ def coffee_machine():
                 resources[resource] = "$" + str(resources[resource])
         print(resources)
     elif choice == 'off':
-        toggle_coffee_monitor()
+        coffee_monitor = False
     else:
         resource_check = checking_resources(resources, choice)
         if resource_check == "":
