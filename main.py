@@ -133,7 +133,7 @@ def coffee_machine():
                 balance = calculate_balance(total_paid, choice)
                 if balance > 0:
                     print(f"Here is your balance: {balance}")
-                print(f"Here is your {choice}. Enjoy!")
+                print(f"Here is your {choice} ☕. Enjoy!")
         else:
             print(resource_check)
             coffee_machine()
